@@ -1,51 +1,65 @@
 <!DOCTYPE html>
-
-<html lang="en">
+<html lang="zh-CN">
 <head>
-<meta charset="utf-8"/>
-<title>CP Smart Grocery AI Platform · Personalized Recommendation</title>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<link href="/ENT-CP/style.css" rel="stylesheet"/>
+  <meta charset="UTF-8" />
+  <title>Smart Grocery AI · 个性化推荐</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<header class="navbar">
-<div class="navbar-logo">CP Smart Grocery AI Platform</div>
-<nav class="navbar-links">
-<a href="index.html">Overview</a>
-<a href="customer.html">Customer View</a>
-<a href="merchant.html">Merchant View</a>
-<a href="insights.html">Project Insights</a>
-</nav>
-</header>
-<main>
-<section class="section section-alt">
-<div class="section-inner">
-<h2>Personalized Recommendation (Demo)</h2>
-<p class="section-description">
-          This page shows segment-based bundles and promo ideas. In production, a lightweight approach can embed text queries into vectors,
-          store similarity scores, then rank and output Top picks with simple explanations.
+  <header class="navbar">
+    <div class="navbar-logo">
+      <a href="index.html" style="text-decoration:none;color:inherit;">Smart Grocery AI</a>
+    </div>
+    <nav class="navbar-links">
+      <a href="index.html">概览</a>
+      <a href="customer.html">顾客端</a>
+      <a href="merchant.html">商家端</a>
+      <a href="insights.html">项目洞察</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section section-alt">
+      <div class="section-inner">
+        <h2>个性化推荐（Personalized Recommendation）</h2>
+        <p class="section-description">
+          这里展示的是<strong>顾客端</strong>看到的个性化推荐结果。后台会先根据整体热门程度和用户行为计算热门商品，
+          再根据不同年龄段设计不同的“推销组合”和折扣活动。商家端看到的是更详细的热门排行榜，
+          顾客端则看到的是：<strong>给我推荐了什么 + 有什么优惠</strong>。
         </p>
-<div class="card">
-<h3>Select an age segment</h3>
-<div class="form-block">
-<label for="ageSegmentSelect">Age segment</label>
-<select id="ageSegmentSelect">
-<option value="">— Select —</option>
-<option value="10-20">10–20</option>
-<option value="20-40">20–40</option>
-<option value="40-60">40–60</option>
-</select>
-</div>
-<div class="results-box" id="ageRecoBox">
-<p class="placeholder">Pick an age segment above to see example bundles and promotion ideas.</p>
-</div>
-</div>
-</div>
-</section>
-</main>
-<footer class="footer">
+
+        <article class="card">
+          <h3>选择年龄段，查看推荐组合</h3>
+          <p>
+            下方示例分为 <strong>10–20 岁</strong>、<strong>20–40 岁</strong>、
+            <strong>40–60 岁</strong> 三个年龄段，每个年龄段都有不同的推荐产品组合和匹配的打折活动。
+          </p>
+
+          <div class="form-block">
+            <label for="ageSegmentSelect">请选择你的年龄段：</label>
+            <select id="ageSegmentSelect">
+              <option value="">—— 请选择 ——</option>
+              <option value="10-20">10–20 岁 · 学生 / 年轻用户</option>
+              <option value="20-40">20–40 岁 · 上班族 / 年轻家庭</option>
+              <option value="40-60">40–60 岁 · 注重健康与性价比</option>
+            </select>
+          </div>
+
+          <div id="ageRecoBox" class="results-box">
+            <p class="placeholder">
+              选择上方年龄段后，这里会展示对应人群的推荐产品组合，以及为他们设计的折扣活动示例。
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
     Smart Omni-Channel Grocery Platform · ENT302 Prototype Demo
   </footer>
-<script src="script.js"></script>
+
+  <script src="script.js"></script>
 </body>
 </html>

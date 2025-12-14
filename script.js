@@ -1,5 +1,5 @@
 // ==================================================
-// CP Smart Grocery AI Platform · Front-end Script
+// Smart Grocery AI Demo · Front-end Script
 // Works across pages. Each block checks if the element exists.
 // ==================================================
 
@@ -673,8 +673,10 @@ function chartBaseOptions() {
       tooltip: { enabled: true },
     },
     scales: {
-      x: { ticks: { color: "#9ca3af" }, grid: { color: "rgba(148,163,184,0.12)" } },
-      y: { ticks: { color: "#9ca3af" }, grid: { color: "rgba(148,163,184,0.12)" } },
+      x: { ticks: {                 display: false,
+color: "#9ca3af" }, grid: { color: "rgba(148,163,184,0.12)" } },
+      y: { ticks: {                 display: false,
+color: "#9ca3af" }, grid: { color: "rgba(148,163,184,0.12)" } },
     },
   };
 }
@@ -836,9 +838,9 @@ function renderTabCharts(tabKey) {
               grid: { color: "rgba(148,163,184,0.18)" },
               pointLabels: { color: "#9ca3af" },
               ticks: {
-                display: false,
                 color: "#9ca3af",
-                // ✅ remove the white backdrop strip behind tick labels
+                                display: false,
+// ✅ remove the white backdrop strip behind tick labels
                 showLabelBackdrop: false,
                 backdropColor: "rgba(0,0,0,0)",
               },
@@ -881,9 +883,9 @@ function renderTabCharts(tabKey) {
               grid: { color: "rgba(148,163,184,0.18)" },
               pointLabels: { color: "#9ca3af" },
               ticks: {
-                display: false,
                 color: "#9ca3af",
-                // ✅ remove the white backdrop strip behind tick labels
+                                display: false,
+// ✅ remove the white backdrop strip behind tick labels
                 showLabelBackdrop: false,
                 backdropColor: "rgba(0,0,0,0)",
               },
@@ -1027,14 +1029,16 @@ function renderTabCharts(tabKey) {
               title: { display: true, text: "Feasibility (1 to 5)", color: "#9ca3af" },
               min: 0,
               max: 5,
-              ticks: { color: "#9ca3af" },
+              ticks: {                 display: false,
+color: "#9ca3af" },
               grid: { color: "rgba(148,163,184,0.12)" },
             },
             y: {
               title: { display: true, text: "Impact (1 to 5)", color: "#9ca3af" },
               min: 0,
               max: 5,
-              ticks: { color: "#9ca3af" },
+              ticks: {                 display: false,
+color: "#9ca3af" },
               grid: { color: "rgba(148,163,184,0.12)" },
             },
           },
@@ -1067,9 +1071,9 @@ function buildCompetitorRadar(name) {
           grid: { color: "rgba(148,163,184,0.18)" },
           pointLabels: { color: "#9ca3af" },
           ticks: {
-                display: false,
             color: "#9ca3af",
-            // ✅ remove the white backdrop strip behind tick labels
+                            display: false,
+// ✅ remove the white backdrop strip behind tick labels
             showLabelBackdrop: false,
             backdropColor: "rgba(0,0,0,0)",
           },

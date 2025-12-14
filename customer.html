@@ -1,49 +1,97 @@
 <!DOCTYPE html>
-
-<html lang="en">
+<html lang="zh-CN">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>CP Smart Grocery AI Platform · Customer</title>
-<link href="/ENT-CP/style.css" rel="stylesheet"/>
+  <meta charset="UTF-8" />
+  <title>Smart Grocery AI · 顾客端总览</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<header class="navbar">
-<div class="navbar-logo">CP Smart Grocery AI Platform</div>
-<nav class="navbar-links">
-<a href="index.html">Overview</a>
-<a href="customer.html">Customer</a>
-<a href="merchant.html">Merchant</a>
-<a href="insights.html">Insights</a>
-</nav>
-</header>
-<main>
-<section class="section">
-<div class="section-inner">
-<h2>Customer View</h2>
+  <header class="navbar">
+    <div class="navbar-logo">
+      <a href="index.html" style="text-decoration:none;color:inherit;">Smart Grocery AI</a>
+    </div>
+    <nav class="navbar-links">
+      <a href="index.html">概览</a>
+      <a href="customer.html">顾客端</a>
+      <a href="merchant.html">商家端</a>
+      <a href="insights.html">项目洞察</a>
+    </nav>
+  </header>
 
-<div class="cards-grid">
-<div class="card">
-<h3>AI Vision Query</h3>
-<p>Pick a sample image (apple or milk) and view a demo recognition + market summary.</p>
-<a class="btn secondary" href="customer-vision.html">Open AI Vision</a>
-</div>
-<div class="card">
-<h3>Personalized Recommendation</h3>
-<p>Select an age segment to see a demo recommendation bundle and promotion ideas.</p>
-<a class="btn secondary" href="customer-reco.html">Open Recommendations</a>
-</div>
-<div class="card">
-<h3>AI Customer Support</h3>
-<p>Ask about promotions, delivery ETA, or store hours in a safe, rule-first demo assistant.</p>
-<a class="btn secondary" href="customer-ai.html">Open Customer Support</a>
-</div>
-</div>
-</div>
-</section>
-<footer class="footer">
-      This is a prototype UI. Outputs are simulated and for demonstration only.
-    </footer>
-</main>
+  <main>
+    <section class="section section-alt">
+      <div class="section-inner">
+        <h2>顾客端 · 功能总览</h2>
+        <p class="section-description">
+          顾客端包含三个主要 AI 功能页面：<strong>AI 客服</strong>、
+          <strong>个性化推荐</strong> 和 <strong>AI 识图</strong>。
+          本页作为入口，为每个功能提供简要说明和跳转按钮。
+        </p>
+
+        <div class="cards-grid">
+          <!-- 卡片 1：AI 客服 -->
+          <article class="card">
+            <h3>AI 客服</h3>
+            <p>
+              通过自然语言对话，帮助顾客快速了解今日促销活动、预计配送时间、
+              最近门店营业时间等信息。本项目重点展示该功能的交互原型。
+            </p>
+            <p class="placeholder">
+              示例场景：<br/>
+              · 今天有什么促销？<br/>
+              · 从西交利物浦太仓生活区下单多久送到？<br/>
+              · 最近的门店今天营业到几点？
+            </p>
+            <a href="customer-ai.html" class="btn primary" style="margin-top:10px;">
+              进入 AI 客服页面
+            </a>
+          </article>
+
+          <!-- 卡片 2：个性化推荐 -->
+          <article class="card">
+            <h3>个性化推荐</h3>
+            <p>
+              根据用户年龄段、历史购买记录和偏好，对热门商品进行重新排序，
+              并叠加不同的折扣策略，让顾客看到“为什么推荐这些商品给我”。
+            </p>
+            <p class="placeholder">
+              该页面将展示：<br/>
+              · 按年龄段的热门搜索<br/>
+              · Overall Top 5 推荐<br/>
+              · 面向顾客的折扣标签
+            </p>
+            <a href="customer-reco.html" class="btn secondary" style="margin-top:10px;">
+              （占位）进入个性化推荐页面
+            </a>
+          </article>
+
+          <!-- 卡片 3：AI 识图 -->
+          <article class="card">
+            <h3>AI 识图</h3>
+            <p>
+              顾客拍摄菜谱或食材照片，系统通过图像识别模型识别菜品和食材，
+              自动生成一篮子相关商品并添加到购物车中。
+            </p>
+            <p class="placeholder">
+              该页面将展示：<br/>
+              · 从图片识别出的主要食材<br/>
+              · 对应的商品组合与价格区间<br/>
+              · 与促销活动的联动示例
+            </p>
+            <a href="customer-vision.html" class="btn secondary" style="margin-top:10px;">
+              （占位）进入 AI 识图页面
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    Smart Omni-Channel Grocery Platform · ENT302 Prototype Demo
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

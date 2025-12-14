@@ -1,41 +1,77 @@
 <!DOCTYPE html>
-
-<html lang="en">
+<html lang="zh-CN">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>CP Smart Grocery AI Platform · Demand Forecast</title>
-<link href="/ENT-CP/style.css" rel="stylesheet"/>
+  <meta charset="UTF-8" />
+  <title>Merchant · 库存优化算法（肉类示例）</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<header class="navbar">
-<div class="navbar-logo">CP Smart Grocery AI Platform</div>
-<nav class="navbar-links">
-<a href="index.html">Overview</a>
-<a href="customer.html">Customer</a>
-<a href="merchant.html">Merchant</a>
-<a href="insights.html">Insights</a>
-</nav>
-</header>
-<main>
-<section class="section">
-<div class="section-inner">
-<h2>Demand Forecast (Summary)</h2>
-<p class="section-description">
-          A compact summary that emphasizes interpretability: mean demand, volatility, and the cost trade-off
-          between over-forecast and under-forecast.
+  <header class="navbar">
+    <div class="navbar-logo">
+      <a href="index.html" style="text-decoration:none;color:inherit;">
+        Smart Grocery AI
+      </a>
+    </div>
+    <nav class="navbar-links">
+      <a href="index.html">概览</a>
+      <a href="customer.html">顾客端</a>
+      <a href="merchant.html">商家端</a>
+      <a href="insights.html">项目洞察</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section section-alt">
+      <div class="section-inner">
+        <h2>模块二：库存优化算法 · 肉类需求预测</h2>
+        <p class="section-description">
+          使用 LSTM 等时间序列模型对 <strong>meat</strong> 的日度需求进行预测，
+          输出“预测日均需求”和“需求波动（标准差）”，用于指导采购与补货策略。
         </p>
-<figure>
-<img alt="Demand prediction chart" class="chart-img" src="Demand Prediction.jpg"/>
-<figcaption>Simulated demand prediction output (chart image)</figcaption>
-</figure>
-<div class="results-box" id="forecastBox"></div>
-</div>
-</section>
-<footer class="footer">
-      Forecast · Demo-only summary output
-    </footer>
-</main>
-<script src="script.js"></script>
+
+        <article class="card">
+          <div class="merchant-flex">
+            <div class="merchant-flex-column">
+              <h3>1. 需求预测曲线（Demand Prediction.jpg）</h3>
+              <figure>
+                <img src="Demand Prediction.jpg" alt="Meat demand prediction" class="chart-img" />
+                <figcaption>
+                  图中蓝线为历史实际需求，红线为模型预测值，绿色和橙色虚线分别代表
+                  预测的平均需求与上下波动区间。可以直观看到未来一段时间的趋势与波动。
+                </figcaption>
+              </figure>
+              <p class="merchant-note">
+                对运营来说，这张图回答了两个核心问题：
+                “本品类整体是在增长、持平还是下滑？”以及“需求是否稳定、有无大幅波动或节假日峰值？”。
+              </p>
+            </div>
+
+            <div class="merchant-flex-column">
+              <h3>2. 关键指标 & 运营解读</h3>
+              <div id="forecastBox" class="results-box">
+                <!-- script.js 会在这里注入：Mean 117.44, Std 2.84 等详细说明 -->
+              </div>
+
+              <p class="merchant-note">
+                在完整系统中，这些指标会和安全库存、在途库存、保质期信息结合：
+              </p>
+              <ul class="merchant-note">
+                <li>根据<strong>日均需求 + k × 波动</strong>计算建议安全库存；</li>
+                <li>给出“本周建议采购量”和“是否需要增加补货频次”的提示；</li>
+                <li>当需求出现异常下跌时，自动提示考虑价格调整或促销清库存。</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    Smart Omni-Channel Grocery Platform · ENT302 Prototype Demo
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

@@ -1,55 +1,90 @@
 <!DOCTYPE html>
-
-<html lang="en">
+<html lang="zh-CN">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>CP Smart Grocery AI Platform · Merchant</title>
-<link href="/ENT-CP/style.css" rel="stylesheet"/>
+  <meta charset="UTF-8" />
+  <title>Smart Grocery AI · 商家端</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<header class="navbar">
-<div class="navbar-logo">CP Smart Grocery AI Platform</div>
-<nav class="navbar-links">
-<a href="index.html">Overview</a>
-<a href="customer.html">Customer</a>
-<a href="merchant.html">Merchant</a>
-<a href="insights.html">Insights</a>
-</nav>
-</header>
-<main>
-<section class="section">
-<div class="section-inner">
-<h2>Merchant View</h2>
+  <header class="navbar">
+    <div class="navbar-logo">
+      <a href="index.html" style="text-decoration:none;color:inherit;">
+        Smart Grocery AI
+      </a>
+    </div>
+    <nav class="navbar-links">
+      <a href="index.html">概览</a>
+      <a href="customer.html">顾客端</a>
+      <a href="merchant.html">商家端</a>
+      <a href="insights.html">项目洞察</a>
+    </nav>
+  </header>
 
-<div class="cards-grid">
-<div class="card">
-<h3>Trending Products &amp; Promo Ideas</h3>
-<p>
-              A Top 5 list derived from a text similarity ranking demo using simulated search logs.
+  <main>
+    <section class="section section-alt">
+      <div class="section-inner">
+        <h2>商家端原型（Merchant View）</h2>
+        <p class="section-description">
+          从运营 / 采购视角出发的 3 个功能页面：
+          热门商品与促销建议、库存优化算法，以及 AI 预测的成本分析。
+          你可以像 APP 一样点击进入不同模块。
+        </p>
+
+        <div class="cards-grid">
+          <article class="card">
+            <h3>模块一：热门商品 & 促销建议</h3>
+            <p>
+              汇总不同年龄段的搜索热点，生成 Overall Top 5 推荐榜单，
+              帮助运营设计跨年龄段的主推品和定向促销。
             </p>
-<a class="btn secondary" href="merchant-hot.html">Open Trending</a>
-</div>
-<div class="card">
-<h3>Demand Forecast (Summary)</h3>
-<p>
-              A short, explainable summary for demand mean, volatility, and ordering trade-offs.
+            <button
+              type="button"
+              class="btn primary"
+              onclick="window.location.href='merchant-hot.html';"
+            >
+              进入 · 热门商品与促销
+            </button>
+          </article>
+
+          <article class="card">
+            <h3>模块二：库存优化算法（肉类示例）</h3>
+            <p>
+              使用时间序列模型预测 meat 的日均需求和波动区间，
+              指导采购和补货节奏，减少缺货与浪费。
             </p>
-<a class="btn secondary" href="merchant-forecast.html">Open Forecast</a>
-</div>
-<div class="card">
-<h3>Inventory Optimization View</h3>
-<p>
-              A table-style view that translates prediction outputs into actionable replenishment hints.
+            <button
+              type="button"
+              class="btn primary"
+              onclick="window.location.href='merchant-forecast.html';"
+            >
+              进入 · 库存优化 & 需求预测
+            </button>
+          </article>
+
+          <article class="card">
+            <h3>模块三：AI 预测成本 & 牛奶销量</h3>
+            <p>
+              以 milk 为例，对比“预测过高”和“预测不足”的成本，
+              并展示未来 30 天销量趋势，帮助在库存安全与资金占用之间做权衡。
             </p>
-<a class="btn secondary" href="merchant-cost.html">Open Inventory</a>
-</div>
-</div>
-</div>
-</section>
-<footer class="footer">
-      Merchant View · Demo-only output (simulated numbers)
-    </footer>
-</main>
+            <button
+              type="button"
+              class="btn primary"
+              onclick="window.location.href='merchant-cost.html';"
+            >
+              进入 · 成本平衡 & 销量
+            </button>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    Smart Omni-Channel Grocery Platform · ENT302 Prototype Demo
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

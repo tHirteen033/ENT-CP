@@ -1,45 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CP Smart Grocery AI Platform · Overview</title>
-  <link rel="/ENT-CP/stylesheet" href="style.css" />
+  <title>Smart Grocery AI · 概览</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<header class="navbar">
-  <div class="navbar-logo">CP Smart Grocery AI Platform</div>
-  <nav class="navbar-links">
-    <a href="index.html">Overview</a>
-    <a href="customer.html">Customer</a>
-    <a href="merchant.html">Merchant</a>
-    <a href="insights.html">Insights</a>
-  </nav>
-</header>
-<main>
-  <section class="section">
-    <div class="section-inner overview-text">
-      <h1>CP Smart Grocery AI Platform</h1>
-      <p class="section-description">
-        A web-based prototype that demonstrates five retail AI functions across customer and merchant perspectives.
-        This demo is designed for workflow validation and UI interaction using simulated and example data, and it is not
-        intended for live procurement decisions.
-      </p>
-
-      <div class="overview-actions">
-        <a class="btn primary" href="customer.html">Open Customer</a>
-        <a class="btn primary" href="merchant.html">Open Merchant</a>
-        <a class="btn secondary" href="insights.html">Open Insights</a>
-      </div>
-
-      <p class="merchant-note" style="margin-top:14px;">
-        Demo outputs are intentionally visible (charts, rankings, recognition results, and dialogue replies) to support quick review and discussion.
-      </p>
+  <header class="navbar">
+    <div class="navbar-logo">
+      <a href="index.html" style="text-decoration:none;color:inherit;">Smart Grocery AI</a>
     </div>
-  </section>
-</main>
-<footer class="footer">
-  CP Smart Grocery AI Platform · Front-end demo only. Outputs are simulated or prefilled for workflow review.
-</footer>
+    <nav class="navbar-links">
+      <a href="index.html">概览</a>
+      <a href="customer.html">顾客端</a>
+      <a href="merchant.html">商家端</a>
+      <a href="insights.html">项目洞察</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="section-inner overview-inner">
+        <div class="overview-text">
+          <h1>智能线上线下一体超市平台原型</h1>
+          <p>
+            本网站用于展示 ENT302 课程项目：面向 Freshippo、Dingdong、Metro 与 Aldi
+            的 AI 驱动线上线下一体超市平台。通过顾客端与商家端两个视角，
+            演示 AI 客服、个性化推荐、AI 识图、需求预测与库存优化等功能。
+          </p>
+          <div class="overview-actions">
+            <a class="btn primary" href="customer.html">我是顾客</a>
+            <a class="btn secondary" href="merchant.html">我是商家</a>
+          </div>
+        </div>
+        <div class="overview-diagram">
+          <h2>系统结构概览</h2>
+          <div class="diagram-box">
+            <div class="diagram-ai">AI 引擎<br/>(推荐 · 识图 · 预测 · 库存)</div>
+            <div class="diagram-row">
+              <div class="diagram-block">顾客前端<br/>App / Web</div>
+              <div class="diagram-block">商家 Dashboard<br/>运营 / 采购</div>
+            </div>
+            <div class="diagram-note">
+              数据来自顾客行为分析、问卷调研与市场机会分析报告，用于支持 AI 原型设计。
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    Smart Omni-Channel Grocery Platform · ENT302 Prototype Demo
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

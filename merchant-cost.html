@@ -1,55 +1,136 @@
 <!DOCTYPE html>
-
-<html lang="en">
+<html lang="zh-CN">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>CP Smart Grocery AI Platform · Inventory View</title>
-<link href="/ENT-CP/style.css" rel="stylesheet"/>
+  <meta charset="UTF-8" />
+  <title>Merchant · 成本平衡 & 牛奶销量预测</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<header class="navbar">
-<div class="navbar-logo">CP Smart Grocery AI Platform</div>
-<nav class="navbar-links">
-<a href="index.html">Overview</a>
-<a href="customer.html">Customer</a>
-<a href="merchant.html">Merchant</a>
-<a href="insights.html">Insights</a>
-</nav>
-</header>
-<main>
-<section class="section">
-<div class="section-inner">
-<h2>Inventory Optimization View</h2>
-<p class="section-description">
-          This page translates prediction outputs into a small set of replenishment hints.
-          Demo values are simulated.
+  <header class="navbar">
+    <div class="navbar-logo">
+      <a href="index.html" style="text-decoration:none;color:inherit;">
+        Smart Grocery AI
+      </a>
+    </div>
+    <nav class="navbar-links">
+      <a href="index.html">概览</a>
+      <a href="customer.html">顾客端</a>
+      <a href="merchant.html">商家端</a>
+      <a href="insights.html">项目洞察</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section section-alt">
+      <div class="section-inner">
+        <h2>模块三：AI 预测成本 & 牛奶 30 天销量</h2>
+        <p class="section-description">
+          以 <strong>milk</strong> 为例，展示未来 30 天销量预测，
+          并量化“预测过高（Over-forecast）”和“预测不足（Under-forecast）”的成本，
+          帮助商家在库存安全与资金占用之间做权衡。
         </p>
-<figure>
-<img alt="Milk sales forecast chart" class="chart-img" src="milk Sales Forecast.jpg"/>
-<figcaption>Simulated “Actual vs Predicted sales” (image)</figcaption>
-</figure>
-<table class="data-table" id="inventoryTable">
-<thead>
-<tr>
-<th>Category</th>
-<th>Signal summary</th>
-<th>Operational meaning</th>
-<th>Suggested action</th>
-</tr>
-</thead>
-<tbody></tbody>
-</table>
-<p class="merchant-note">
-          In production, safety stock and reorder points should incorporate lead time, service level targets,
-          perishability, and store-specific constraints.
-        </p>
-</div>
-</section>
-<footer class="footer">
-      Inventory · Action-oriented demo view
-    </footer>
-</main>
-<script src="script.js"></script>
+
+        <article class="card">
+          <div class="merchant-flex">
+            <!-- 左侧：30 天销量图 -->
+            <div class="merchant-flex-column">
+              <h3>1. 最近 30 天销量：实际 vs 预测</h3>
+              <figure>
+                <img src="milk sales forecast.jpg" alt="Milk sales 30-day forecast" class="chart-img" />
+                <figcaption>
+                  蓝线为预测销量，红线为实际销量。可以看到模型大体跟随趋势，
+                  但在个别日期仍存在偏高或偏低的情况，这些偏差会进一步反映在库存成本上。
+                </figcaption>
+              </figure>
+              <p class="merchant-note">
+                对乳制品这类<strong>保质期较短</strong>的品类，预测准确度直接影响报废损耗与缺货损失，
+                因此需要更高频地更新预测模型，并配合临期折扣、买赠活动来加速周转。
+              </p>
+            </div>
+
+            <!-- 右侧：成本结构 + 明细 + 库存建议 -->
+            <div class="merchant-flex-column">
+              <h3>2. 预测成本结构（milk）</h3>
+              <div class="results-box">
+                <p><strong>Forecast cost（milk）：223.04</strong></p>
+                <ul>
+                  <li>Over-forecast cost（预测过高成本）：<strong>60.61</strong></li>
+                  <li>Under-forecast cost（预测不足成本）：<strong>101.83</strong></li>
+                </ul>
+                <p>
+                  可以看到，<strong>预测不足的成本明显高于预测过高</strong>。
+                  对牛奶这种高频刚需商品来说，缺货带来的销售机会损失和顾客体验下降，
+                  比轻微的库存积压更贵。
+                </p>
+                <p class="merchant-note">
+                  运营策略含义：订货时可以略向“宁多勿少”倾斜，
+                  同时通过“临期折扣 / 买二赠一 / 捆绑销售”等手段提升周转，
+                  控制过期报废风险。
+                </p>
+              </div>
+
+              <details class="results-box">
+                <summary>展开查看最近 30 天 Actual vs Predicted 销量明细</summary>
+                <ul class="sales-list">
+                  <li>Day 1 – Actual 15.12, Predicted 17.85</li>
+                  <li>Day 2 – Actual 15.90, Predicted 21.30</li>
+                  <li>Day 3 – Actual 29.26, Predicted 28.85</li>
+                  <li>Day 4 – Actual 25.06, Predicted 26.89</li>
+                  <li>Day 5 – Actual 9.71, Predicted 11.43</li>
+                  <li>Day 6 – Actual 14.50, Predicted 9.34</li>
+                  <li>Day 7 – Actual 25.87, Predicted 22.24</li>
+                  <li>Day 8 – Actual 27.18, Predicted 27.01</li>
+                  <li>Day 9 – Actual 9.45, Predicted 10.48</li>
+                  <li>Day 10 – Actual 6.54, Predicted 12.83</li>
+                  <li>Day 11 – Actual 14.51, Predicted 11.45</li>
+                  <li>Day 12 – Actual 24.59, Predicted 22.00</li>
+                  <li>Day 13 – Actual 12.30, Predicted 8.54</li>
+                  <li>Day 14 – Actual 28.29, Predicted 24.06</li>
+                  <li>Day 15 – Actual 4.63, Predicted 12.65</li>
+                  <li>Day 16 – Actual 33.82, Predicted 26.45</li>
+                  <li>Day 17 – Actual 14.32, Predicted 7.62</li>
+                  <li>Day 18 – Actual 27.94, Predicted 24.47</li>
+                  <li>Day 19 – Actual 28.84, Predicted 28.88</li>
+                  <li>Day 20 – Actual 21.20, Predicted 26.66</li>
+                  <li>Day 21 – Actual 27.50, Predicted 22.28</li>
+                  <li>Day 22 – Actual 26.99, Predicted 24.47</li>
+                  <li>Day 23 – Actual 27.66, Predicted 22.34</li>
+                  <li>Day 24 – Actual 16.28, Predicted 15.01</li>
+                  <li>Day 25 – Actual 11.80, Predicted 18.35</li>
+                  <li>Day 26 – Actual 33.81, Predicted 26.83</li>
+                  <li>Day 27 – Actual 14.69, Predicted 17.88</li>
+                  <li>Day 28 – Actual 8.81, Predicted 15.61</li>
+                  <li>Day 29 – Actual 33.16, Predicted 28.04</li>
+                  <li>Day 30 – Actual 30.95, Predicted 27.53</li>
+                </ul>
+              </details>
+
+              <h3 style="margin-top:12px;">3. 库存与补货建议（摘要）</h3>
+              <table id="inventoryTable" class="data-table">
+                <thead>
+                  <tr>
+                    <th>商品</th>
+                    <th>预测指标摘要</th>
+                    <th>当前运营状态</th>
+                    <th>建议动作</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- 行内容由 script.js 动态填充（Meat / Milk 两个示例） -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    Smart Omni-Channel Grocery Platform · ENT302 Prototype Demo
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

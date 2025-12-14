@@ -1,65 +1,67 @@
 <!DOCTYPE html>
-
-<html lang="en">
+<html lang="zh-CN">
 <head>
-<meta charset="utf-8"/>
-<title>CP Smart Grocery AI Platform · Image-based Query</title>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<link href="/ENT-CP/style.css" rel="stylesheet"/>
+  <meta charset="UTF-8" />
+  <title>Smart Grocery AI · AI 识图</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<header class="navbar">
-<div class="navbar-logo">CP Smart Grocery AI Platform</div>
-<nav class="navbar-links">
-<a href="index.html">Overview</a>
-<a href="customer.html">Customer</a>
-<a href="merchant.html">Merchant</a>
-<a href="insights.html">Insights</a>
-</nav>
-</header>
-<main>
-<section class="section section-alt">
-<div class="section-inner">
-<h2>Image-based Grocery Query</h2>
-<p class="section-description">
-          This demo simulates an image-based query flow backed by a Qwen multimodal model.
-          You pick a sample image, then the page shows a fixed recognition result and market-style summary.
+  <header class="navbar">
+    <div class="navbar-logo">
+      <a href="index.html" style="text-decoration:none;color:inherit;">Smart Grocery AI</a>
+    </div>
+    <nav class="navbar-links">
+      <a href="index.html">概览</a>
+      <a href="customer.html">顾客端</a>
+      <a href="merchant.html">商家端</a>
+      <a href="insights.html">项目洞察</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section section-alt">
+      <div class="section-inner">
+        <h2>AI 识图（Image-based Grocery Recommendation）</h2>
+        <p class="section-description">
+          本页展示使用 <strong>Qwen 图像模型</strong> 的 AI 识图功能示例。
+          当前 Demo 仅提供一个苹果样例：点击按钮后展示模型对图片中苹果的识别结果，
+          包括品种判断、价格区间、销量情况以及典型折扣策略。
         </p>
-<article class="card">
-<h3>Demo input</h3>
-<p>
-            Put the sample images in your project folder and name them
-            <code>apple.jpg</code> and <code>milk.jpg</code>.
-            In production, users would upload any product image and the backend would call the model.
+
+        <article class="card">
+          <h3>示例：Qwen 模型识别苹果</h3>
+          <p>
+            图片将放在项目文件夹中并命名为 <code>apple.jpg</code>。
+            在正式系统中，顾客可以上传任意水果 / 菜谱图片，后台调用 Qwen 模型做识别，
+            并自动生成一篮子相关商品。本 Demo 用固定图片和运行结果进行展示。
           </p>
-<div class="form-block">
-<label for="visionSelect">Choose a sample image</label>
-<select id="visionSelect">
-<option value="apple">Apple</option>
-<option value="milk">Milk</option>
-</select>
-</div>
-<div class="form-block">
-<label>Preview</label>
-<img alt="Sample preview" class="ai-image-preview" id="visionPreview" src="apple.jpg"/>
-</div>
-<div class="form-block">
-<button class="btn primary" id="visionRunBtn" type="button">
-              Run Qwen Image Demo
+
+          <div class="form-block">
+            <label>示例图片：</label>
+            <img src="apple.jpg" alt="Apple example" class="ai-image-preview" />
+          </div>
+
+          <div class="form-block">
+            <button type="button" id="appleDemoBtn" class="btn primary">
+              运行 Qwen AI 识图（苹果示例）
             </button>
-</div>
-<div class="results-box" id="visionResultBox">
-<p class="placeholder">
-              Click the button to show the recognition result and demo market analysis.
+          </div>
+
+          <div id="appleResultBox" class="results-box">
+            <p class="placeholder">
+              点击上方按钮后，将展示 Qwen 模型对该苹果图片的识别结果和营销分析示例。
             </p>
-</div>
-</article>
-</div>
-</section>
-</main>
-<footer class="footer">
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
     Smart Omni-Channel Grocery Platform · ENT302 Prototype Demo
   </footer>
-<script src="script.js"></script>
+
+  <script src="script.js"></script>
 </body>
 </html>
