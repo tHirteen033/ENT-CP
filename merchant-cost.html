@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CP Smart Grocery AI Platform · Inventory View</title>
+<link href="style.css" rel="stylesheet"/>
+</head>
+<body>
+<header class="navbar">
+<div class="navbar-logo">CP Smart Grocery AI Platform</div>
+<nav class="navbar-links">
+<a href="index.html">Overview</a>
+<a href="customer.html">Customer</a>
+<a href="merchant.html">Merchant</a>
+<a href="insights.html">Insights</a>
+</nav>
+</header>
+<main>
+<section class="section">
+<div class="section-inner">
+<h2>Inventory Optimization View</h2>
+<p class="section-description">
+          This page translates prediction outputs into a small set of replenishment hints.
+          Demo values are simulated.
+        </p>
+<figure>
+<img alt="Milk sales forecast chart" class="chart-img" src="milk Sales Forecast.jpg"/>
+<figcaption>Simulated “Actual vs Predicted sales” (image)</figcaption>
+</figure>
+<table class="data-table" id="inventoryTable">
+<thead>
+<tr>
+<th>Category</th>
+<th>Signal summary</th>
+<th>Operational meaning</th>
+<th>Suggested action</th>
+</tr>
+</thead>
+<tbody></tbody>
+</table>
+<p class="merchant-note">
+          In production, safety stock and reorder points should incorporate lead time, service level targets,
+          perishability, and store-specific constraints.
+        </p>
+</div>
+</section>
+<footer class="footer">
+      Inventory · Action-oriented demo view
+    </footer>
+</main>
+<script src="script.js"></script>
+</body>
+</html>

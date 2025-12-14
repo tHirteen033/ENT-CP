@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>CP Smart Grocery AI Platform · Insights</title>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="style.css" rel="stylesheet"/>
+</head>
+<body id="insightsPage">
+<header class="navbar">
+<div class="navbar-logo">CP Smart Grocery AI Platform</div>
+<nav class="navbar-links">
+<a href="index.html">Overview</a>
+<a href="customer.html">Customer</a>
+<a href="merchant.html">Merchant</a>
+<a href="insights.html" style="color:#e5e7eb;background:rgba(15,23,42,0.9);">Insights</a>
+</nav>
+</header>
+<main>
+<section class="section section-alt">
+<div class="section-inner">
+<h2>Insights Dashboard</h2>
+<p class="section-description">
+          This page recreates the Streamlit analysis view using plain HTML plus JavaScript.
+          All datasets are embedded in script.js as arrays and objects.
+        </p>
+<div class="insights-tabs" id="insightsTabs">
+<button class="active" data-tab="overview">Overview</button>
+<button data-tab="market">Market Analysis</button>
+<button data-tab="competitors">Competitor Dashboard</button>
+<button data-tab="segmentation">Segmentation Model</button>
+<button data-tab="opportunities">Opportunities Matrix</button>
+</div>
+<!-- Overview -->
+<div class="insights-panel active" id="tab-overview">
+<div class="insights-grid">
+<div class="insight-block">
+<h3>Market Value and Forecast</h3>
+<p>Actual values 2019 to 2024 and forecast 2024 to 2029.</p>
+<div class="chart-wrap"><canvas class="chart-canvas" id="mvChart"></canvas></div>
+</div>
+<div class="insight-block">
+<h3>Category Share</h3>
+<p>Comparison between 2019 and 2024.</p>
+<div class="chart-wrap"><canvas class="chart-canvas" id="catChart"></canvas></div>
+</div>
+<div class="insight-block">
+<h3>Geographic Distribution 2024</h3>
+<p>Regional market share.</p>
+<div class="chart-wrap"><canvas class="chart-canvas" id="geoChart"></canvas></div>
+</div>
+<div class="insight-block">
+<h3>Distribution Channels 2024</h3>
+<p>Channel share in the demo dataset.</p>
+<div class="chart-wrap"><canvas class="chart-canvas" id="channelChart"></canvas></div>
+</div>
+<div class="insight-block">
+<h3>Key Market Drivers</h3>
+<p>Illustrative impact score out of 5.</p>
+<div class="chart-wrap"><canvas class="chart-canvas" id="driversChart"></canvas></div>
+</div>
+<div class="insight-block">
+<h3>Customer Insights</h3>
+<p>Buyer power factors radar view.</p>
+<div class="chart-wrap"><canvas class="chart-canvas" id="customerRadar"></canvas></div>
+</div>
+</div>
+</div>
+<!-- Market Analysis -->
+<div class="insights-panel" id="tab-market">
+<div class="insights-grid">
+<div class="insight-block">
+<h3>Market Drivers</h3>
+<p>Why the market keeps growing in the report narrative.</p>
+<div class="chart-wrap"><canvas class="chart-canvas" id="driversChart2"></canvas></div>
+</div>
+<div class="insight-block">
+<h3>Customer Insights</h3>
+<p>Moderate to strong buyer power in the market.</p>
+<div class="chart-wrap"><canvas class="chart-canvas" id="customerRadar2"></canvas></div>
+</div>
+<div class="insight-block">
+<h3>Market Forecast</h3>
+<p>Forecast line re-shown for quick discussion.</p>
+<div class="chart-wrap"><canvas class="chart-canvas" id="mvChart2"></canvas></div>
+</div>
+</div>
+</div>
+<!-- Competitors -->
+<div class="insights-panel" id="tab-competitors">
+<div class="insights-grid">
+<div class="insight-block" style="grid-column: span 3;">
+<h3>Leading Competitors Revenue</h3>
+<p>Estimated revenue in USD billions for comparison in the demo.</p>
+<div class="chart-wrap" style="height:320px;"><canvas class="chart-canvas" id="revChart"></canvas></div>
+</div>
+<div class="insight-block" style="grid-column: span 1;">
+<h3>Competitor Selector</h3>
+<p>Select one brand to view profile and strategic focus.</p>
+<div class="form-block">
+<label for="competitorSelect">Choose a competitor</label>
+<select id="competitorSelect"></select>
+</div>
+<div class="results-box" id="competitorProfile">
+<p class="placeholder">Select a competitor to show details.</p>
+</div>
+</div>
+<div class="insight-block" style="grid-column: span 2;">
+<h3>Strategic Focus</h3>
+<p>Radar chart based on the demo scores.</p>
+<div class="chart-wrap"><canvas class="chart-canvas" id="focusRadar"></canvas></div>
+</div>
+</div>
+</div>
+<!-- Segmentation -->
+<div class="insights-panel" id="tab-segmentation">
+<div class="insights-grid">
+<div class="insight-block">
+<h3>Customer Segments</h3>
+<p>Example segmentation buckets used for planning actions.</p>
+<div class="results-box" id="segmentText"></div>
+</div>
+<div class="insight-block">
+<h3>Segment Purchase Behavior</h3>
+<p>Basket size and online preference in the demo dataset.</p>
+<div class="chart-wrap"><canvas class="chart-canvas" id="segmentBar"></canvas></div>
+</div>
+<div class="insight-block">
+<h3>Product Segmentation</h3>
+<p>Perishability, category, price tier, and brand type.</p>
+<div class="chart-wrap"><canvas class="chart-canvas" id="productSegBar"></canvas></div>
+</div>
+</div>
+</div>
+<!-- Opportunities -->
+<div class="insights-panel" id="tab-opportunities">
+<div class="insights-grid">
+<div class="insight-block" style="grid-column: span 2;">
+<h3>Impact vs Feasibility</h3>
+<p>Opportunity bubble chart used to prioritize initiatives.</p>
+<div class="chart-wrap"><canvas class="chart-canvas" id="oppBubble"></canvas></div>
+</div>
+<div class="insight-block" style="grid-column: span 1;">
+<h3>SWOT Summary</h3>
+<p>Short version for the demo.</p>
+<div class="results-box" id="swotBox"></div>
+</div>
+</div>
+</div>
+<p class="section-description" style="margin-top:18px;">
+          If you see empty blocks, it usually means Chart.js is not loaded.
+          This version uses a CDN import, so the page needs network access.
+        </p>
+</div>
+</section>
+</main>
+<footer class="footer">
+    Smart Omni-Channel Grocery Platform · ENT302 Prototype Demo
+  </footer>
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CP Smart Grocery AI Platform · Customer Support</title>
+<link href="style.css" rel="stylesheet"/>
+</head>
+<body>
+<header class="navbar">
+<div class="navbar-logo">CP Smart Grocery AI Platform</div>
+<nav class="navbar-links">
+<a href="index.html">Overview</a>
+<a href="customer.html">Customer</a>
+<a href="merchant.html">Merchant</a>
+<a href="insights.html">Insights</a>
+</nav>
+</header>
+<main>
+<section class="section">
+<div class="section-inner">
+<h2>AI Customer Support (Demo)</h2>
+<p class="section-description">
+          A safe, rule-first dialogue demo for common questions: promotions, delivery ETA, and store hours.
+          For unknown cases, the demo should be able to say “cannot confirm” and suggest next actions.
+        </p>
+<div class="chat-layout">
+<div class="chat-main">
+<div class="chat-box" id="chatBox"></div>
+<form class="chat-input-row" id="chatForm">
+<input autocomplete="off" id="chatInput" placeholder="Type your question..." type="text"/>
+<button class="btn primary" type="submit">Send</button>
+</form>
+</div>
+<aside class="chat-side-panel">
+<h3>Quick questions</h3>
+<p style="margin-top:0;color:#9ca3af;">
+              Click to ask:
+            </p>
+<div class="chat-quick-actions">
+<button data-question="Any promotions today?" type="button">Promotions</button>
+<button data-question="How long is delivery to the campus?" type="button">Delivery ETA</button>
+<button data-question="What time does the nearest store close?" type="button">Store hours</button>
+<button data-question="How do I request a refund?" type="button">Refund</button>
+<button data-question="Can I talk to a human agent?" type="button">Human agent</button>
+</div>
+<ul>
+<li>Demo uses fixed store data and preset rules.</li>
+<li>Production should query real store hours, delivery capacity, and promotion rules.</li>
+<li>Fallback should be explicit and avoid guessing.</li>
+</ul>
+</aside>
+</div>
+</div>
+</section>
+<footer class="footer">
+      Customer Support · Rule-first demo assistant
+    </footer>
+</main>
+<script src="script.js"></script>
+</body>
+</html>

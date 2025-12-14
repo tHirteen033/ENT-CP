@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CP Smart Grocery AI Platform · Trending Products</title>
+<link href="style.css" rel="stylesheet"/>
+</head>
+<body>
+<header class="navbar">
+<div class="navbar-logo">CP Smart Grocery AI Platform</div>
+<nav class="navbar-links">
+<a href="index.html">Overview</a>
+<a href="customer.html">Customer</a>
+<a href="merchant.html">Merchant</a>
+<a href="insights.html">Insights</a>
+</nav>
+</header>
+<main>
+<section class="section">
+<div class="section-inner">
+<h2>Trending Products &amp; Promo Ideas</h2>
+<p class="section-description">
+          Demo ranking is generated via a simple text-to-vector similarity approach:
+          search texts are converted into vectors and matched to product keyword vectors,
+          then the Top 5 products are shown.
+        </p>
+<table class="data-table" id="hotProductsTable">
+<thead>
+<tr>
+<th>Rank</th>
+<th>Product</th>
+<th>Margin</th>
+<th>Promo suggestion</th>
+</tr>
+</thead>
+<tbody></tbody>
+</table>
+<div class="merchant-flex">
+<div class="merchant-flex-column">
+<figure>
+<img alt="Trend chart for age 10–20" class="chart-img" src="10.jpg"/>
+<figcaption>Simulated search trend · Age 10–20</figcaption>
+</figure>
+</div>
+<div class="merchant-flex-column">
+<figure>
+<img alt="Trend chart for age 20–40" class="chart-img" src="20.jpg"/>
+<figcaption>Simulated search trend · Age 20–40</figcaption>
+</figure>
+</div>
+<div class="merchant-flex-column">
+<figure>
+<img alt="Trend chart for age 40–60" class="chart-img" src="40.jpg"/>
+<figcaption>Simulated search trend · Age 40–60</figcaption>
+</figure>
+</div>
+</div>
+<p class="merchant-note">
+          In production, ranking should combine popularity with margin and inventory health,
+          with diversity constraints to avoid a monotonous list.
+        </p>
+</div>
+</section>
+<footer class="footer">
+      Trending · Top 5 list (text similarity demo)
+    </footer>
+</main>
+<script src="script.js"></script>
+</body>
+</html>

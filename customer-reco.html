@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>CP Smart Grocery AI Platform · Personalized Recommendation</title>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="style.css" rel="stylesheet"/>
+</head>
+<body>
+<header class="navbar">
+<div class="navbar-logo">CP Smart Grocery AI Platform</div>
+<nav class="navbar-links">
+<a href="index.html">Overview</a>
+<a href="customer.html">Customer View</a>
+<a href="merchant.html">Merchant View</a>
+<a href="insights.html">Project Insights</a>
+</nav>
+</header>
+<main>
+<section class="section section-alt">
+<div class="section-inner">
+<h2>Personalized Recommendation (Demo)</h2>
+<p class="section-description">
+          This page shows segment-based bundles and promo ideas. In production, a lightweight approach can embed text queries into vectors,
+          store similarity scores, then rank and output Top picks with simple explanations.
+        </p>
+<div class="card">
+<h3>Select an age segment</h3>
+<div class="form-block">
+<label for="ageSegmentSelect">Age segment</label>
+<select id="ageSegmentSelect">
+<option value="">— Select —</option>
+<option value="10-20">10–20</option>
+<option value="20-40">20–40</option>
+<option value="40-60">40–60</option>
+</select>
+</div>
+<div class="results-box" id="ageRecoBox">
+<p class="placeholder">Pick an age segment above to see example bundles and promotion ideas.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="footer">
+    Smart Omni-Channel Grocery Platform · ENT302 Prototype Demo
+  </footer>
+<script src="script.js"></script>
+</body>
+</html>

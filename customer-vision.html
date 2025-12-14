@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>CP Smart Grocery AI Platform · Image-based Query</title>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="style.css" rel="stylesheet"/>
+</head>
+<body>
+<header class="navbar">
+<div class="navbar-logo">CP Smart Grocery AI Platform</div>
+<nav class="navbar-links">
+<a href="index.html">Overview</a>
+<a href="customer.html">Customer</a>
+<a href="merchant.html">Merchant</a>
+<a href="insights.html">Insights</a>
+</nav>
+</header>
+<main>
+<section class="section section-alt">
+<div class="section-inner">
+<h2>Image-based Grocery Query</h2>
+<p class="section-description">
+          This demo simulates an image-based query flow backed by a Qwen multimodal model.
+          You pick a sample image, then the page shows a fixed recognition result and market-style summary.
+        </p>
+<article class="card">
+<h3>Demo input</h3>
+<p>
+            Put the sample images in your project folder and name them
+            <code>apple.jpg</code> and <code>milk.jpg</code>.
+            In production, users would upload any product image and the backend would call the model.
+          </p>
+<div class="form-block">
+<label for="visionSelect">Choose a sample image</label>
+<select id="visionSelect">
+<option value="apple">Apple</option>
+<option value="milk">Milk</option>
+</select>
+</div>
+<div class="form-block">
+<label>Preview</label>
+<img alt="Sample preview" class="ai-image-preview" id="visionPreview" src="apple.jpg"/>
+</div>
+<div class="form-block">
+<button class="btn primary" id="visionRunBtn" type="button">
+              Run Qwen Image Demo
+            </button>
+</div>
+<div class="results-box" id="visionResultBox">
+<p class="placeholder">
+              Click the button to show the recognition result and demo market analysis.
+            </p>
+</div>
+</article>
+</div>
+</section>
+</main>
+<footer class="footer">
+    Smart Omni-Channel Grocery Platform · ENT302 Prototype Demo
+  </footer>
+<script src="script.js"></script>
+</body>
+</html>
